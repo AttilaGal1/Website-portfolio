@@ -1,0 +1,594 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color:#ffffff;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;  
+}
+section {
+  height: 100vh;               /* each section fills the viewport */
+  display: flex;               /* optional: center content */
+  justify-content: center;     
+  align-items: center;
+  font-size: 2em;
+  scroll-snap-align: start;
+}
+header {
+    padding: 20px 50px;
+}
+#home {
+  background: #ffffff; 
+}
+
+#about {
+  background: #FFF7F7;   
+}
+
+#projects {
+  background: #fff9e7;   
+}
+#future-plans {
+   position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    gap: 30px;
+    margin: 0;
+    padding: 20px 50px;
+     opacity: 0;
+  transform: translateY(-100px);
+  animation: slideIn 1s ease-out forwards;
+}
+
+nav ul li a {
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-right: 20px;
+    
+}
+
+nav ul li a:hover {
+    color: rgb(40, 137, 221);
+}
+.dropdown {
+   /* font-size: small;*/
+  position: relative;
+}
+.dropdown-content {
+  display: none;               
+  position: absolute;
+  top: 100%;                
+  left: 0;
+  min-width: 100px;
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transform: none;
+  animation: none;  
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-content li {
+  padding: 4px;
+}
+
+.dropdown-content li a {
+    display: flex;
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.dropdown-content li:hover {
+display: flex;
+}
+
+/* 🔑 show the hidden list when hovering ENG */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hero {
+display: flex;
+justify-content: space-between;
+align-items: center;
+/*background:#2d55fb;*/
+color: black;
+padding: 50px;
+}
+
+.hero-text {
+    max-width: 50%;
+    margin-left: 400px;
+    font-size: 1.5em;
+    margin-top: 0px;
+    padding: 20px;
+    opacity: 0;
+  transform: translateX(-100px);
+  animation: slideIn 1s ease-out forwards;
+}
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 2px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero-text .socials a {
+    margin-right: 15px;
+    padding: 10px;
+}
+.hero-image {
+  position: relative;
+  display: inline-block;
+}
+
+/* Styles for the clean PNG (always visible after animation) */
+.hero-image .clean {
+  width: 700px;
+  margin-bottom: 250px;
+  margin-right: 50px;
+
+  opacity: 0; /* start hidden for animation */
+  transform: translateX(500px);
+  animation: slideIn 1s ease-out forwards;
+  z-index: 1; /* keep it above background */
+}
+
+.hero-image .bg {
+  border-radius: 2%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 700px;
+  margin-bottom: 250px;
+  margin-right: 50px;
+
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.6s ease 1s; /* smooth fade on hover */
+  z-index: 0; /* behind clean PNG */
+}
+
+/* On hover, fade in background photo */
+.hero-image:hover .bg {
+  opacity: 1;
+
+}
+
+.socials img{
+    width: 40px;
+    transition: transform 0.3s; /* smooth animation */
+}
+.socials img:hover {
+  transform: scale(1.2); /* grows slightly */
+}
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1200px) {
+  nav ul {
+    justify-content: center;
+    flex-direction: row;  /* stack menu items */
+    gap: 0px;
+    padding: 0px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-text {
+    margin-left: 0;   /* remove big desktop margin */
+    margin-top: 20px;
+    font-size: 1.2em;
+    max-width: 90%;
+  }
+
+}
+#about {
+  position: relative;
+  height: 100vh;
+  padding: 80px 20px;
+  overflow: hidden;
+  display: block; /* 📌 stop flex pushing content to center */
+}
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* icons won’t block clicks or text */
+}
+
+.floating-icons .icon {
+  position: absolute;
+  opacity: 0.15;   /* faint in background */
+}
+
+/* 🔹 Gear: spins + floats */
+.gear-icon {
+  width: 500px; 
+  top: 10%; 
+  left: 60%;
+  animation: spinFloat 20s linear infinite;
+}
+
+/* 🔹 PC: floats + tilts */
+.pc-icon {
+  width: 400px;
+  top: 70%; 
+  left: 45%;
+  animation: floatTilt 6s ease-in-out infinite;
+}
+
+/* 🔹 Code: floats + tilts */
+.code-icon {
+  width: 700px;
+  top: 1%; 
+  left: 5%;
+  animation: floatTiltOnce 7s ease-in-out infinite;
+}
+
+/* --- KEYFRAMES --- */
+
+/* Float + tilt once */
+@keyframes floatTiltOnce {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-15px) rotate(10deg); }  /* tilt slightly up */
+  50%  { transform: translateY(-30px) rotate(0deg); }  /* straighten at top */
+  75%  { transform: translateY(-15px) rotate(-5deg); } /* tilt the other way */
+  100% { transform: translateY(0) rotate(0deg); }      /* return */
+}
+
+/* Gear spins + floats */
+@keyframes spinFloat {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-30px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* PC + code float with tilt */
+@keyframes floatTilt {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-20px) rotate(8deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+@media (max-width: 768px) {
+  .floating-icons .icon {
+    width: 120px;      /* smaller size */
+    opacity: 0.1;      /* lighter, less distracting */
+  }
+
+  .gear-icon   { top: 10%; left: 5%; }
+  .pc-icon     { top: 70%; left: 65%; }
+  .code-icon { top: 50%; left: 20%; }
+}
+
+/* On very small screens (max 480px wide, phones) */
+@media (max-width: 480px) {
+  .floating-icons {
+    display: none; /* hide all floating icons on very small screens */
+  }
+}
+#about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ✅ centers children horizontally */
+}
+
+#about-text {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;          /* ✅ centers horizontally */
+  font-size: 1.2em;
+  text-align: center;      /* or justify, up to you */
+  white-space: pre-wrap;
+}
+
+.about-content {
+  max-width: 900px;
+  width: 100%;
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+.about-title {
+  font-size: 2.5em;
+  margin-bottom: 4px; /* space below title */
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: all 0.8s ease-out;
+  width: 100%;
+}
+
+.about-title.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+#future-plans .bg-image {
+  position: absolute;
+  margin-bottom: 280px;
+  bottom: 1; 
+  left: 0;
+  width: 100%;
+  text-align: center; /* keep image centered */
+  opacity: 0.5; /* makes it subtle */
+  z-index: -1; /* sends it behind text */
+}
+
+#future-plans .bg-image img {
+  width: 10000px; /* scale as needed */
+  max-width: 100%;
+}
+#future-plans .section-title {
+  position: absolute;
+  top:30px;
+  font-size: 2.5em;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s ease-out;
+}
+
+/* when visible, animate into place */
+#future-plans .section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#projects {
+  padding: 80px 20px;
+  text-align: center;
+  display: block;       /* ✅ override flex from section */
+  height: auto;         /* ✅ let it grow with content */
+  min-height: 100vh;    /* still fills the screen at least */
+}
+.projects-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+  position: static;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.projects-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 20px;
+  height: 320px;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h2 {
+  font-size: 1.5rem;
+  margin: 10px 0 6px;
+  text-align: center;
+}
+
+.project-card .description {
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  padding: 0 12px;
+  line-height: 1.5;
+}
+
+.future-text {
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 2;
+  color: #444;
+  text-align: justify;
+  max-width: 850px;
+  margin: 0 auto;
+  padding-left: 20px;
+  opacity: 0;
+  transform: translateY(300px);
+  transition: all 1s ease-out;
+}
+
+.future-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.back-to-top {
+   position: absolute;   /* relative to future section */
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  opacity: 0;           /* hidden by default */
+  pointer-events: none; /* not clickable while hidden */
+  transition: opacity 0.5s ease, transform 0.4s ease;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px); /* bounce up */
+  }
+  60% {
+    transform: translateY(-5px);  /* smaller bounce */
+  }
+}
+.back-to-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* visible state */
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  animation: bounce 1s ease infinite;
+  animation-delay: 5s;
+  animation-duration: 2s;  /* repeats every 5s */
+}
+.back-to-top:hover {
+  animation:none;
+  transform: scale(1.5);
+}
+@media (max-width: 768px) {   
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  nav ul li a {
+    font-size: 1.5em; /* smaller than 2em */
+    margin-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .hero-text {
+    font-size: 1em;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .hero-image .clean,
+  .hero-image .bg {
+    width: 90%; /* shrink images */
+    margin: 20px auto;
+  }
+}
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* single column */
+    gap: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .back-to-top {
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
+@media (max-width: 1100px) {
+  .hero-image .clean,
+  .hero-image .bg {
+    display: none;
+  }
+
+  .hero-image:hover .bg {
+    opacity: 0 !important;
+  }
+}
+@media (max-width: 1400px){
+  .future-text{
+    font-size: 1rem;   /* smaller */
+    line-height: 1.6;    /* improve readability */
+    padding: 0 15px;     /* add breathing room */
+    text-align: left;   
+  }
+}
+@media (max-width: 768px) {
+  #future-plans .section-title{
+    font-size: 1.5rem;
+    top: 5px;
+  }
+}
+@media (max-width: 768px) {
+  #about-text {
+    font-size: 1rem;    /* smaller font on tablets/phones */
+    line-height: 1.5;
+    padding: 0 15px;    /* add breathing room */
+    text-align: left;   /* avoid big justified gaps on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  #about-text {
+    font-size: 0.85rem; /* even smaller for small phones */
+    line-height: 1.4;
+  }
+}
+.project-video {
+  width: 100%;
+  height: 200px;       /* same as your old image cards */
+  object-fit: cover;   /* zoom + crop like background image */
+  border-radius: 12px, 12px , 0px, 0px; /* keep nice rounded corners */
+}
+

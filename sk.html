@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attila Gál</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<!-- For Apple devices -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- For Android -->
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+<!-- Classic fallback -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Hlavná stránka</a></li>
+        <li><a href="#about">O mne</a></li>
+        <li><a href="#projects">Projekty</a></li>
+        <li><a href="#future-plans">Budúce plány</a></li>
+         <li><a href="javascript:void(0)" onclick="alert('Táto webstránka je vytvorená Attilom Gálom, kompletne od základov. Predstavuje začiatok mojej cesty s HTML a CSS a kladie základy pre budúce projekty. 🚀')">O stránke</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)">SK</a>
+          <ul class="dropdown-content">
+            <li><a href="hun.html">HUN</a></li>
+            <li><a href="index.html">ENG</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Ahoj, som Attila</h1>
+      <p>Som začínajúci vývojár a mojím cieľom je stať sa full-stack webovým vývojárom.</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/attila-g%C3%A1l-b26317383/" target="_blank"><img src="linkedin.png" alt="Linkedin icon"></a>
+        <a href="https://www.instagram.com/g_ati_/"target="_blank" title="Otvorí sa v Instagrame (môže byť potrebné prihlásenie)"
+><img src="insta.png" alt="Instagram icon"></a>
+        <a href="https://www.facebook.com/ati.gal" target="_blank"><img src="fb.png" alt="Facebook icon"></a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="me2.png" alt="Photo of Attila" class="photo clean">
+
+       <img src="imageme.jpg" alt="Photo of Attila" class="photo bg">
+    </div>
+
+  </section>
+
+ <section id="about">
+  <div class="floating-icons">
+    <img src="gear.png" alt="gear" class="icon gear-icon">
+    <img src="pc.png" alt="pc" class="icon pc-icon">
+    <img src="code.png" alt="code" class="icon code-icon">
+  </div>
+
+  <div class="about-container">
+    <h2 class="about-title">O mne</h2>
+    <div id="about-text"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h1 class="projects-title">Projekty</h1>
+  
+  <div class="projects-grid">
+    
+    <!-- Project 1 -->
+    <a href="javascript:void(0)" class="project-card">
+       <video src="Portfolio.mp4" class="project-video" autoplay loop muted playsinline></video>
+      <h2>Portfólio stránka</h2>
+      <p class="description">
+        Vytvorené pomocou HTML, CSS a minimálneho JavaScriptu. Obsahuje jednoduché animácie, no je navrhnuté tak, aby zaujalo na prvý pohľad.
+      </p>
+    </a>
+
+    <!-- Project 2 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 2 Preview">
+      <h2>Estimated in late 2025</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 3 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 3 Preview">
+      <h2>Estimated in 2026</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 4 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 4 Preview">
+      <h2>Estimated in 2026</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 5 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 5 Preview">
+      <h2>Unknown Date</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 6 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 6 Preview">
+      <h2>Unknown Date</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+  </div>
+</section>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector("#projects .projects-title");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        title.classList.add("visible");
+      }
+    });
+  });
+
+  observer.observe(title);
+});
+</script>
+
+<script>
+const text = [
+  "Od mája 2025 som bakalár absolvent odboru Aplikovaná informatika v Nitre a momentálne pokračujem v magisterskom štúdiu.",
+  "Okrem štúdia sa neustále zameriavam na zlepšovanie svojich IT zručností. Vo voľnom čase rád cvičím a plánujem sa viac venovať aj outdoorovým aktivitám. Zaujímam sa tiež o kreatívne oblasti, ako je strih videa, kde pracujem s produktmi Adobe a rozvíjam svoje digitálne mediálne schopnosti.",
+  "Popri vysokoškolskom štúdiu pracujem v sklade. Aj keď táto práca priamo nesúvisí s IT, naučila ma disciplíne, zodpovednosti a efektívnemu hospodáreniu s časom. Napriek náročnosti práce venujem svoj voľný čas rozvoju IT zručností a príprave na kariéru v tejto oblasti.",
+  "Mojím aktuálnym cieľom je stať sa full-stack webovým vývojárom. Toto webové portfólio je jedným z mojich prvých projektov, ktoré som vytvoril úplne od začiatku ako súčasť svojej vzdelávacej cesty."
+];
+
+let i = 0, j = 0;
+const speed = 27;
+const aboutText = document.getElementById("about-text");
+const aboutTitle = document.querySelector(".about-title");
+
+function typeWriter() {
+  if (i < text.length) {
+    if (j < text[i].length) {
+      aboutText.innerHTML += text[i].charAt(j);
+      j++;
+      setTimeout(typeWriter, speed);
+    } else {
+      aboutText.innerHTML += "<br><br>";
+      i++;
+      j = 0;
+      setTimeout(typeWriter, 100);
+    }
+  } else {
+    // remove cursor at the end
+    aboutText.style.borderRight = "none";
+  }
+}
+
+// Observer for both title + text
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      aboutTitle.classList.add("show"); // slide-in title
+      setTimeout(typeWriter, 1000); // start typing after title slides in
+      observer.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(aboutText);
+</script>
+
+<section id="future-plans">
+  <h1 class="section-title">Budúce plány</h1>
+  <div class="bg-image">
+    <img src="bgcityday.png" alt="Background image">
+  </div>
+ 
+   <p class="future-text">
+    Po ukončení strednej školy som sa začal zaujímať o IT.
+    Popri práci v sklade som sa zapísal na externé vysokoškolské štúdium informatiky.
+    Počas týchto štyroch rokov som však nemal jasný cieľ ani smer v oblasti IT.
+    Skúšal som sa učiť viaceré programovacie jazyky, no ani jeden som si úplne neosvojil.
+    <br><br>
+    Teraz, keď sa hlásim na magisterské štúdium, nechcem už strácať čas.
+    Mojím plánom je zamerať sa na to, aby som sa stal full-stack webovým vývojárom
+    a vytváral plne funkčné webové stránky a aplikácie.
+    Postupne by som rád získal prácu na tejto pozícii alebo v podobnej oblasti,
+    pričom si chcem ponechať aj možnosť freelancingu popri zamestnaní.
+    <br><br>
+    Uvedomujem si silnú konkurenciu vo webovom vývoji a existenciu mnohých
+    platforiem na tvorbu webov, ktoré umožňujú ľuďom bez skúseností vytvárať stránky.
+    Napriek tomu verím, že stať sa full-stack webovým vývojárom mi poskytne stabilné
+    a štandardné miesto v IT priemysle, spolu so znalosťami a zručnosťami,
+    na ktorých môžem ďalej stavať počas svojej kariéry.
+  </p>
+   <a href="#home" class="back-to-top">
+    <img src="arrow.png" alt="Back to top">
+  </a>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const futureText = document.querySelector(".future-text");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        futureText.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(futureText);
+});
+  </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector("#future-plans .section-title");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        title.classList.add("visible");
+      }
+    });
+  });
+
+  observer.observe(title);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.querySelector("#future-plans .back-to-top");
+  const futureSection = document.querySelector("#future-plans");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // wait 2 seconds before showing
+        setTimeout(() => {
+          backToTop.classList.add("show");
+        }, 2000);
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+  }, { threshold: 0.5 }); // trigger when 50% of section is visible
+
+  observer.observe(futureSection);
+});
+</script>
+
+
+</section>
+
+</body>
+</html>

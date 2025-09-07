@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attila Gál</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<!-- For Apple devices -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- For Android -->
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+<!-- Classic fallback -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Main</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#future-plans">Future plans</a></li>
+        <li><a href="javascript:void(0)" onclick="alert('This website is made by Attila Gál, completely built from scratch. It marks the beginning of my HTML and CSS journey, laying the foundation for future projects. 🚀')">Site info</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)">ENG</a>
+          <ul class="dropdown-content">
+            <li><a href="hun.html">HUN</a></li>
+            <li><a href="sk.html">SK</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Hey, I'm Attila</h1>
+      <p>I’m a beginner developer aiming to grow into a full-stack web developer.</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/attila-g%C3%A1l-b26317383/" target="_blank"><img src="linkedin.png" alt="Linkedin icon"></a>
+        <a href="https://www.instagram.com/g_ati_/" target="_blank" title="Opens in Instagram (login may be required)"
+><img src="insta.png" alt="Instagram icon"></a>
+        <a href="https://www.facebook.com/ati.gal" target="_blank"><img src="fb.png" alt="Facebook icon"></a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="me2.png" alt="Photo of Attila" class="photo clean">
+
+       <img src="imageme.jpg" alt="Photo of Attila" class="photo bg">
+    </div>
+
+  </section>
+
+ <section id="about">
+  <div class="floating-icons">
+    <img src="gear.png" alt="gear" class="icon gear-icon">
+    <img src="pc.png" alt="pc" class="icon pc-icon">
+    <img src="code.png" alt="code" class="icon code-icon">
+  </div>
+
+  <div class="about-container">
+    <h2 class="about-title">About Me</h2>
+    <div id="about-text"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h1 class="projects-title">My Projects</h1>
+  
+  <div class="projects-grid">
+    
+    <!-- Project 1 -->
+    <a href="javascript:void(0)" class="project-card">
+       <video src="Portfolio.mp4" class="project-video" autoplay loop muted playsinline></video>
+      <h2>Portfolio Website</h2>
+      <p class="description">
+        Built with HTML, CSS, and minimal JavaScript. Features basic animations but designed to catch the eye.
+      </p>
+    </a>
+
+    <!-- Project 2 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 2 Preview">
+      <h2>Estimated in late 2025</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 3 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 3 Preview">
+      <h2>Estimated in 2026</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 4 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 4 Preview">
+      <h2>Estimated in 2026</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 5 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 5 Preview">
+      <h2>Unknown Date</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 6 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 6 Preview">
+      <h2>Unknown Date</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+  </div>
+</section>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector("#projects .projects-title");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        title.classList.add("visible");
+      }
+    });
+  });
+
+  observer.observe(title);
+});
+</script>
+
+<script>
+const text = [
+  "As of May 2025, I am a Bachelor graduate in Applied Informatics from Nitra and I am continuing my Master’s degree. ",
+  "Beyond my academic path, I am focused on constantly improving my skills in the IT field. Outside of studies and work, I enjoy working out, and I am planning to explore more outdoor activities. I am also interested in creative fields such as video editing, where I work with Adobe products to develop my skills in digital media.",
+  "Alongside my university studies, I am employed as a warehouse worker. While this role is not directly related to IT, it has taught me discipline, responsibility, and time management. Despite the demanding nature of the work, I continue to dedicate my free time to developing my IT skills and preparing for a career in the field.",
+  "Currently, I am aiming to become a full-stack web developer. This website portfolio is one of my first projects, built entirely from scratch as part of my learning journey."
+];
+
+let i = 0, j = 0;
+const speed = 27;
+const aboutText = document.getElementById("about-text");
+const aboutTitle = document.querySelector(".about-title");
+
+function typeWriter() {
+  if (i < text.length) {
+    if (j < text[i].length) {
+      aboutText.innerHTML += text[i].charAt(j);
+      j++;
+      setTimeout(typeWriter, speed);
+    } else {
+      aboutText.innerHTML += "<br><br>";
+      i++;
+      j = 0;
+      setTimeout(typeWriter, 100);
+    }
+  } else {
+    // remove cursor at the end
+    aboutText.style.borderRight = "none";
+  }
+}
+
+// Observer for both title + text
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      aboutTitle.classList.add("show"); // slide-in title
+      setTimeout(typeWriter, 1000); // start typing after title slides in
+      observer.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(aboutText);
+</script>
+
+<section id="future-plans">
+  <h1 class="section-title">Future Plans</h1>
+  <div class="bg-image">
+    <img src="bgcityday.png" alt="Background image">
+  </div>
+ 
+   <p class="future-text">
+    After finishing high school, I became interested in IT. While working a
+    regular warehouse job, I enrolled in an external university program to
+    study Computer Science. During those four years, however, I lacked a clear
+    goal or direction in the IT field. I tried learning a few programming
+    languages but never truly mastered one.
+    <br><br>
+    Now, as I apply for my Master’s degree, I don’t want to waste more time. My
+    plan is to focus on becoming a Full Stack Web Developer, building fully
+    functional websites and applications. Eventually, I aim to land a job in
+    this position or a similar role, while also keeping freelancing as an
+    option alongside employment.
+    <br><br>
+    I am aware of the strong competition in web development and the existence
+    of many website-building platforms that allow people with no experience to
+    create websites. However, I truly believe that becoming a Full Stack Web
+    Developer will provide me with a solid, standard role in the IT industry,
+    along with the knowledge and skills I can continue to build on as I grow in
+    my career.
+  </p>
+   <a href="#home" class="back-to-top">
+    <img src="arrow.png" alt="Back to top">
+  </a>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const futureText = document.querySelector(".future-text");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        futureText.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(futureText);
+});
+  </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector("#future-plans .section-title");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        title.classList.add("visible");
+      }
+    });
+  });
+
+  observer.observe(title);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.querySelector("#future-plans .back-to-top");
+  const futureSection = document.querySelector("#future-plans");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // wait 2 seconds before showing
+        setTimeout(() => {
+          backToTop.classList.add("show");
+        }, 2000);
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+  }, { threshold: 0.5 }); // trigger when 50% of section is visible
+
+  observer.observe(futureSection);
+});
+</script>
+
+
+</section>
+
+</body>
+</html>

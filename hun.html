@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attila Gál</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<!-- For Apple devices -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- For Android -->
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+<!-- Classic fallback -->
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Főoldal</a></li>
+        <li><a href="#about">Rólam</a></li>
+        <li><a href="#projects">Projektek</a></li>
+        <li><a href="#future-plans">Jövőkép</a></li>
+         <li><a href="javascript:void(0)" onclick="alert('Ezt a weboldalt Gál Attila készítette teljesen a nulláról. Ez jelenti a HTML és CSS tanulásom kezdetét, és alapot ad a jövőbeli projektjeimhez. 🚀')">Az oldalról</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)">HUN</a>
+          <ul class="dropdown-content">
+            <li><a href="index.html">ENG</a></li>
+            <li><a href="sk.html">SK</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Helló, Attila vagyok</h1>
+      <p>Kezdő fejlesztőként azon dolgozom, hogy idővel full-stack webfejlesztővé váljak.</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/attila-g%C3%A1l-b26317383/" target="_blank"><img src="linkedin.png" alt="Linkedin icon"></a>
+        <a href="https://www.instagram.com/g_ati_/" target="_blank" title="Megnyílik az Instagramon (bejelentkezés szükséges lehet)"
+><img src="insta.png" alt="Instagram icon"></a>
+        <a href="https://www.facebook.com/ati.gal" target="_blank"><img src="fb.png" alt="Facebook icon"></a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="me2.png" alt="Photo of Attila" class="photo clean">
+
+       <img src="imageme.jpg" alt="Photo of Attila" class="photo bg">
+    </div>
+
+  </section>
+
+ <section id="about">
+  <div class="floating-icons">
+    <img src="gear.png" alt="gear" class="icon gear-icon">
+    <img src="pc.png" alt="pc" class="icon pc-icon">
+    <img src="code.png" alt="code" class="icon code-icon">
+  </div>
+
+  <div class="about-container">
+    <h2 class="about-title">Rólam</h2>
+    <div id="about-text"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h1 class="projects-title">Projektek</h1>
+  
+  <div class="projects-grid">
+    
+    <!-- Project 1 -->
+    <a href="javascript:void(0)" class="project-card">
+       <video src="Portfolio.mp4" class="project-video" autoplay loop muted playsinline></video>
+      <h2>Portfólió weboldal</h2>
+      <p class="description">
+        HTML, CSS és minimális JavaScript felhasználásával készült. Egyszerű animációkat tartalmaz, de figyelemfelkeltő megjelenésre lett tervezve.
+      </p>
+    </a>
+
+    <!-- Project 2 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 2 Preview">
+      <h2>Estimated in late 2025</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 3 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 3 Preview">
+      <h2>Estimated in 2026</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 4 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 4 Preview">
+      <h2>Estimated in 2026</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 5 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 5 Preview">
+      <h2>Unknown Date</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+    <!-- Project 6 -->
+    <a href="javascript:void(0)" class="project-card">
+      <img src="comingsoon.gif" alt="Project 6 Preview">
+      <h2>Unknown Date</h2>
+      <p class="description">
+        
+      </p>
+    </a>
+
+  </div>
+</section>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector("#projects .projects-title");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        title.classList.add("visible");
+      }
+    });
+  });
+
+  observer.observe(title);
+});
+</script>
+
+<script>
+const text = [
+  "2025 májusától alkalmazott informatika alapszakos diplomával rendelkezem Nyitráról, és jelenleg mesterképzésemet folytatom.",
+  "Az egyetemi tanulmányaimon túl folyamatosan arra törekszem, hogy fejlesszem tudásomat az informatika területén. A tanulás és munka mellett szívesen sportolok, rendszeresen edzek, és a jövőben szeretnék több szabadtéri tevékenységet is kipróbálni. Emellett érdeklődöm a kreatív területek, például a videószerkesztés iránt, ahol Adobe programokkal fejlesztem a digitális médiában szerzett készségeimet.",
+  "Az egyetemi tanulmányaim mellett jelenleg egy raktárban dolgozom. Bár ez a munka nem közvetlenül kapcsolódik az informatikához, megtanított a fegyelemre, a felelősségvállalásra és az időgazdálkodásra. A munka fizikai megterhelése ellenére szabadidőmben továbbra is az IT készségeim fejlesztésére összpontosítok, hogy felkészüljek egy szakmai karrierre ezen a területen.",
+  "Jelenlegi célom, hogy teljes értékű full-stack webfejlesztővé váljak. Ez a portfólió weboldal az egyik első projektem, amelyet teljes egészében a tanulási utam részeként építettem meg a nulláról."
+];
+
+let i = 0, j = 0;
+const speed = 27;
+const aboutText = document.getElementById("about-text");
+const aboutTitle = document.querySelector(".about-title");
+
+function typeWriter() {
+  if (i < text.length) {
+    if (j < text[i].length) {
+      aboutText.innerHTML += text[i].charAt(j);
+      j++;
+      setTimeout(typeWriter, speed);
+    } else {
+      aboutText.innerHTML += "<br><br>";
+      i++;
+      j = 0;
+      setTimeout(typeWriter, 100);
+    }
+  } else {
+    // remove cursor at the end
+    aboutText.style.borderRight = "none";
+  }
+}
+
+// Observer for both title + text
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      aboutTitle.classList.add("show"); // slide-in title
+      setTimeout(typeWriter, 1000); // start typing after title slides in
+      observer.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(aboutText);
+</script>
+
+<section id="future-plans">
+  <h1 class="section-title">Jövőkép</h1>
+  <div class="bg-image">
+    <img src="bgcityday.png" alt="Background image">
+  </div>
+ 
+   <p class="future-text">
+    A középiskola befejezése után kezdtem el érdeklődni az informatika iránt. Egy raktári munka mellett beiratkoztam egy levelező egyetemi programra, hogy számítástechnikát tanuljak.
+    Azonban a négy év alatt nem volt világos célom vagy irányom az IT területén.
+    Több programozási nyelvvel is próbálkoztam, de egyiket sem sikerült igazán elsajátítanom.
+    <br>
+    Most, hogy a mesterképzésre jelentkezem, nem akarok több időt elvesztegetni.
+    A tervem az, hogy full-stack webfejlesztővé váljak, teljesen működő weboldalakat és alkalmazásokat építsek.
+    Végül szeretnék elhelyezkedni ebben a pozícióban vagy egy hasonló munkakörben,
+    miközben a szabadúszást is nyitva hagyom lehetőségként a főállás mellett.
+    <br><br>
+    Tisztában vagyok a webfejlesztés erős versenyével és azzal, hogy sok weboldal-készítő platform létezik,
+    amelyek lehetővé teszik, hogy tapasztalat nélkül is weboldalakat hozzanak létre.
+    Ennek ellenére hiszem, hogy a full-stack webfejlesztővé válás szilárd, szabványos szerepet biztosít számomra az IT iparágban,
+    valamint olyan tudást és készségeket ad, amelyekre a jövőben tovább tudok építeni a karrierem során.
+  </p>
+   <a href="#home" class="back-to-top">
+    <img src="arrow.png" alt="Back to top">
+  </a>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const futureText = document.querySelector(".future-text");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        futureText.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(futureText);
+});
+  </script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector("#future-plans .section-title");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        title.classList.add("visible");
+      }
+    });
+  });
+
+  observer.observe(title);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.querySelector("#future-plans .back-to-top");
+  const futureSection = document.querySelector("#future-plans");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // wait 2 seconds before showing
+        setTimeout(() => {
+          backToTop.classList.add("show");
+        }, 2000);
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+  }, { threshold: 0.5 }); // trigger when 50% of section is visible
+
+  observer.observe(futureSection);
+});
+</script>
+
+
+</section>
+
+</body>
+</html>
